@@ -1,94 +1,126 @@
-# 🏥 LLM-based Medical Chatbot
+# 🏥 LLM-Based Medical Chatbot
 
-A **Medical Chatbot** powered by **Large Language Models (LLMs)** to provide **health-related answers and guidance** using advanced **Natural Language Processing (NLP)**.
-
-This project integrates **Hugging Face Datasets** for training and evaluation, enabling accurate and context-aware medical responses.
-
----
-
-## 🚀 Features
-- ✅ **LLM-powered medical chatbot** for Q&A.
-- ✅ Integration with **Hugging Face Datasets** for biomedical data.
-- ✅ **Fine-tuning support** for transformer models (BERT, GPT, LLaMA, etc.).
-- ✅ **Evaluation** on multiple medical QA datasets.
-- ✅ **Easy deployment** for web or API.
+**A Medical Chatbot powered by Large Language Models (LLMs) to provide health-related answers and guidance using advanced Natural Language Processing (NLP).**  
+This is the **final AI capstone project 2025**, deployed as a **Hugging Face Space** and demonstrated with an **explanatory video**.
 
 ---
 
-## 📂 Dataset
-This project leverages **medical and biomedical datasets** hosted on [Hugging Face Datasets](https://huggingface.co/datasets), which provide high-quality data for training and evaluation of LLMs.
+## 📌 Overview
 
-Currently used datasets:
+This project showcases an **AI-powered medical chatbot** that can:
+- Understand medical questions in natural language.
+- Provide accurate health-related guidance.
+- Leverage **Hugging Face LLM models** with fine-tuning for medical queries.
 
-1. **[MedQuAD](https://huggingface.co/datasets/medquad)**
-   - A collection of medical Q&A pairs extracted from the U.S. National Library of Medicine websites.
-   - Used for fine-tuning the chatbot for reliable medical answers.
+---
 
-2. **[PubMedQA](https://huggingface.co/datasets/pubmed_qa)**
-   - Biomedical Question Answering dataset from PubMed.
-   - Helps in generating context-aware answers for research-based questions.
+## 🌐 Live Demo & Video
 
-3. **[MedMCQA](https://huggingface.co/datasets/medmcqa)**
-   - A large-scale, multiple-choice medical QA dataset.
-   - Useful for improving accuracy and evaluation metrics.
+- **Hugging Face Space:**  
+  [Montaser7 / LLaMA2 Medical Chatbot](https://huggingface.co/spaces/Montaser7/llama2-medical-chatbot)
 
-You can load the dataset directly using Hugging Face:
+- **Demo Video on YouTube:**  
+  [LLAMA2-Medical-ChatBot | Final AI Capstone Project 2025](https://www.youtube.com/watch?v=qV_msediEv0&t=9s)
 
+---
+
+## ❓ Example Questions
+
+The model can answer questions like:
+1. What are the symptoms of diabetes?  
+2. What is high blood pressure?  
+3. What are the symptoms of vitamin D deficiency?  
+4. What is the difference between the flu and the common cold?  
+
+---
+
+## 📂 Project Structure
+
+```
+LLM/
+│
+├── data/                     # Medical datasets (MedQuAD, PubMedQA, etc.)
+├── notebooks/                # Experiments and training notebooks
+├── src/                      # Source code
+│   ├── model.py               # Model building and fine-tuning
+│   ├── inference.py           # Model inference and chatbot logic
+│   └── utils.py
+│
+├── app.py                     # Streamlit or Gradio interface
+├── requirements.txt           # Python dependencies
+└── README.md
+```
+
+---
+
+## 📊 Datasets
+
+We use **Hugging Face Datasets** for medical Q&A:
+
+1. **[MedQuAD](https://huggingface.co/datasets/medquad)** – Medical Q&A pairs from NLM websites.  
+2. **[PubMedQA](https://huggingface.co/datasets/pubmed_qa)** – Biomedical Q&A for research-based insights.  
+3. **[MedMCQA](https://huggingface.co/datasets/medmcqa)** – Large-scale multiple-choice medical questions.
+
+Example loading:
 ```python
 from datasets import load_dataset
-
-# Example: Load MedQuAD
 dataset = load_dataset("medquad")
-
-# Access train and test splits
 print(dataset['train'][0])
 ```
 
 ---
 
-## ⚡ Why Hugging Face Datasets?
-- Pre-cleaned and **ready-to-use**.
-- **Easy integration** with Transformers and PyTorch.
-- Large **community and support** for reproducible ML projects.
-- Compatible with **LangChain & LLM fine-tuning** pipelines.
-
----
-
-## 🛠️ Installation
+## 🛠 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YourUsername/LLM-Medical-Chatbot.git
-cd LLM-Medical-Chatbot
+git clone https://github.com/Montaser778/LLM.git
+cd LLM
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 
----
-
-## 🚀 Usage Example
-
-```python
-from transformers import pipeline
-
-# Example: Load a QA pipeline (replace with your fine-tuned model)
-qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
-
-question = "What are the symptoms of diabetes?"
-context = "Diabetes symptoms include frequent urination, increased thirst, and weight loss."
-
-print(qa_pipeline(question=question, context=context))
+**requirements.txt** should include:
+```
+transformers
+datasets
+torch
+streamlit
+gradio
+numpy
+pandas
+scikit-learn
 ```
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License** - feel free to use and modify.
+## 🚀 Usage
+
+1. **Run the chatbot interface locally:**
+```bash
+python app.py
+```
+
+2. **Or run in Streamlit:**
+```bash
+streamlit run app.py
+```
+
+3. Ask medical questions and get AI-powered answers.
 
 ---
 
-## 👨‍💻 Contributors
-- **Montaser778** - Project Owner & Developer
-- **Open-Source Community**
+## ⚠️ Disclaimer
 
+> This chatbot is for **educational purposes only**.  
+> It **does not replace professional medical advice**.
+
+---
+
+## 👤 Author
+
+**Montaser Hussam AbuShawish**  
+*AI & Machine Learning Capstone Project 2025*  
+- [Hugging Face Space](https://huggingface.co/spaces/Montaser7/llama2-medical-chatbot)  
+- [YouTube Demo Video](https://www.youtube.com/watch?v=qV_msediEv0&t=9s)
